@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="/static/favicon.ico" />
+	<meta name="description" content="Time Table Maker/Generator is a web app for generating personal time table according to slots. VNIT, Nagpur." />
+	<meta name="keywords" content="Time, Table, VNIT, Nagpur, NIT,TimeTable, Maker, Slots, Generator" />
+	<link rel="stylesheet" href="/static/style.css" type="text/css" media="screen" />
+	<meta http-equiv="cache-control" content="no-store" />
+	<meta http-equiv="content-language" content="en-US" />
+	<title>Time Table Generator</title>
+	<!--Google Analytics-->
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-33241707-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+	<!--End of Google Analytics script-->
+    <script type="text/javascript">
+    function hideshow(){
+    var link = document.getElementById('more');
+    if (link.style.display=="block")
+        {link.style.display="none";
+        document.getElementById("showtext").innerHTML="+";
+        } 
+    else
+        {link.style.display="block";
+        document.getElementById("showtext").innerHTML="-";
+        }
+    }
+    function SubmitFormDl(){
+    var oForm = document.forms["main_form"];
+    var element=document.getElementById("q");
+    element.value="Download";
+    oForm.submit()
+    }
+    function SubmitFormView(){
+    var oForm = document.forms["main_form"];
+    var element=document.getElementById("q");
+    element.value="View";
+    oForm.submit()
+    }
+    </script>
+</head>
+<body>
+    <div class="header">
+    <h3><a href="/about">Time Table Generator</a></h3>
+	Customize according to your own slots & corresponding data.
+    </div><hr>
+    <b> Data </b>
+    <div class="CSSTableGenerator ">
+	<form method="post" id="main_form">
+	<table>
+        <tr>
+            <td> Slot </td>
+			<td> Course Name </td>
+			<td> Prac </td>
+		</tr>
+		<tr>
+            <td> A </td>
+			<td><input type="checkbox" name="theo_a"><input type="text" name="text_a" placeholder="Slot A"></td>
+			<td></td>
+		</tr>
+		<tr>
+            <td> B </td>
+			<td><input type="checkbox" name="theo_b"><input type="text" name="text_b" placeholder="Slot B"></td>
+			<td><input type="checkbox" name="prac_b"></td>
+		</tr>
+		<tr>
+            <td> C </td>
+			<td><input type="checkbox" name="theo_c"><input type="text" name="text_c" placeholder="Slot C"></td>
+			<td><input type="checkbox" name="prac_c"></td>
+		</tr>
+		<tr>
+            <td> D </td>
+			<td><input type="checkbox" name="theo_d"><input type="text" name="text_d" placeholder="Slot D"></td>
+			<td><input type="checkbox" name="prac_d"></td>
+		</tr>
+		<tr>
+            <td> E </td>
+			<td><input type="checkbox" name="theo_e"><input type="text" name="text_e" placeholder="Slot E"></td>
+			<td><input type="checkbox" name="prac_e"></td>
+		</tr>
+		<tr>
+            <td> F </td>
+			<td><input type="checkbox" name="theo_f"><input type="text" name="text_f" placeholder="Slot F"></td>
+			<td><input type="checkbox" name="prac_f"></td>
+		</tr>
+		<tr>
+            <td> G </td>
+			<td><input type="checkbox" name="theo_g"><input type="text" name="text_g" placeholder="Slot G"></td>
+			<td><input type="checkbox" name="prac_g"></td>
+		</tr>
+		<tr>
+            <td> H </td>
+			<td><input type="checkbox" name="theo_h"><input type="text" name="text_h" placeholder="Slot H"></td>
+			<td><input type="checkbox" name="prac_h"></td>
+		</tr><tr>
+            <td> Seminar </td>
+			<td><input type="checkbox" name="seminar" value="0"><input type="text" name="text_seminar" placeholder="Seminar\Tutorial"></td>
+			<td></td>
+		</tr>
+        <tr>
+        <td> Pracs </td>
+        <td>Batch <select name="batch"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>
+        <td></td>
+        </tr>
+	</table>
+    </div><br>
+    
+    <a href="javascript:void(0)" onclick="hideshow();" id="showtext" class="PrettyButton">+</a><br>
+
+    <div id="more" style="display:none;">
+    <hr>
+    <b>Table Customization (optional)</b>
+    <div class="CSSTableGenerator ">
+	<table>
+        <tr>
+            <td> Header Type </td>
+            <td> Value </td>
+            <td> Default </td>
+        </tr>
+		<tr>
+			<td> Day\Time </td>
+			<td><input type="text" name="head_day_time" placeholder="Day\Time" value="Day\Time"></td>
+            <td> Day\Time </td>
+		</tr>
+		<tr>
+            <td> 08:00 - 08:55am </td>
+			<td><input type="text" name="head_8" placeholder="8 - 9" value="8"></td>
+            <td> 8 </td>
+		</tr>
+		<tr>
+            <td> 09:00 - 09:55am </td>
+			<td><input type="text" name="head_9" placeholder="9 - 10" value="9"></td>
+            <td> 9 </td>
+		</tr>
+		<tr>
+            <td> 10:00 - 10:55am </td>
+			<td><input type="text" name="head_10" placeholder="10 - 11" value="10"></td>
+            <td> 10 </td>
+        </tr>
+		<tr>
+            <td> 11:00 - 11:55am </td>
+			<td><input type="text" name="head_11" placeholder="11 - 12" value="11"></td>
+            <td> 11 </td>
+        </tr>
+		<tr>
+            <td> 12:00 - 12:55pm </td>
+			<td><input type="text" name="head_12" placeholder="12 - 1" value="12"></td>
+            <td> 12 </td>
+        </tr>
+		<tr>
+            <td> 02:00 - 03:50pm </td>
+			<td><input type="text" name="head_2" placeholder="Prac Slot 1" value="2"></td>
+            <td> 2 </td>
+        </tr>
+		<tr>
+            <td> 03:50 - 05:40pm </td>
+			<td><input type="text" name="head_4" placeholder="Prac Slot 2" value="4"></td>
+            <td> 4 </td>
+        </tr>
+		<tr>
+            <td> Free Slot Mark </td>
+			<td><input type="text" name="free_slot_mark" placeholder="Free Slot Mark" value=""></td>
+            <td> (empty) </td>
+        </tr>
+	</table>
+    </div>
+    </div>
+    <br>
+	<a href="javascript:void(0)" onclick="SubmitFormView();" type="submit" class="PrettyButton">Generate</a>
+    <a href="javascript:void(0)" onclick="SubmitFormDl();" type="submit" class="PrettyButton">Download</a>
+    <input type="text" value="view" id="q" name="q" style="display:none;">
+	</form>
+	<!-- <div class="about"><a href="/about">About this Web App</a></div><br/> -->
+</body>
+</html>
+  
